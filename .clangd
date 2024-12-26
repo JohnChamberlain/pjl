@@ -1,3 +1,4 @@
 CompileFlags:
   Add: [-I/home/jsc/dev/shared/src]
+  Add: [-I./include]
 

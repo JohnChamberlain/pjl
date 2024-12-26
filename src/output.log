@@ -1,0 +1,173 @@
+c99 -ggdb -o pjl ui.c data.c ../../shared/src/jcstring.c -I../../shared/src ../../shared/src/termio.c
+data.c:6:1: error: unknown type name ‘RECORDS’
+ RECORDS gMedia;
+ ^~~~~~~
+data.c:7:1: error: unknown type name ‘RECORDS’
+ RECORDS gPlaces;
+ ^~~~~~~
+data.c:8:1: error: unknown type name ‘RECORDS’
+ RECORDS gAuthors;
+ ^~~~~~~
+data.c:9:1: error: unknown type name ‘RECORDS’
+ RECORDS gVendors;
+ ^~~~~~~
+data.c:10:1: error: unknown type name ‘RECORDS’
+ RECORDS gPublishers;
+ ^~~~~~~
+data.c:12:17: error: unknown type name ‘RECORDS’
+ bool recordNew( RECORDS* recordset, void* pNewRecord, STRBUF* sbError ){
+                 ^~~~~~~
+data.c:33:17: error: unknown type name ‘MEDIA’
+ void freeMedia( MEDIA* pMedia ){}
+                 ^~~~~
+data.c:34:17: error: unknown type name ‘PLACE’
+ void freePlace( PLACE* pPlace ){}
+                 ^~~~~
+data.c:35:18: error: unknown type name ‘AUTHOR’
+ void freeAuthor( AUTHOR* pAuthor ){}
+                  ^~~~~~
+data.c:36:18: error: unknown type name ‘VENDOR’
+ void freeVendor( VENDOR* pVendor ){}
+                  ^~~~~~
+data.c:38:20: error: unknown type name ‘RECORDS’
+ bool recordDelete( RECORDS* recordset, unsigned int xRecordToBeDeleted, STRBUF* sbError ){
+                    ^~~~~~~
+data.c:71:1: error: unknown type name ‘AUTHOR’
+ AUTHOR* getAuthorByName( char* sBuffer, unsigned int lenBuffer, unsigned int* iOccurrence ){
+ ^~~~~~
+data.c: In function ‘getAuthorByName’:
+data.c:72:14: error: request for member ‘record_count’ in something not a structure or union
+  if( gAuthors.record_count == 0 ) return NULL;
+              ^
+data.c:74:30: error: request for member ‘record_count’ in something not a structure or union
+  if( *iOccurrence >= gAuthors.record_count ) iStartingIndex == gAuthors.record_count % *iOccurrence;
+                              ^
+data.c:74:72: error: request for member ‘record_count’ in something not a structure or union
+  if( *iOccurrence >= gAuthors.record_count ) iStartingIndex == gAuthors.record_count % *iOccurrence;
+                                                                        ^
+data.c:77:3: error: unknown type name ‘AUTHOR’
+   AUTHOR* pAuthor = gAuthors.records[ xAuthor ];
+   ^~~~~~
+data.c:77:29: error: request for member ‘records’ in something not a structure or union
+   AUTHOR* pAuthor = gAuthors.records[ xAuthor ];
+                             ^
+data.c:79:37: error: request for member ‘surname’ in something not a structure or union
+    if( stringMatchCharArray( pAuthor->surname, sBuffer, 0, lenBuffer ) ) return pAuthor;
+                                     ^~
+data.c:82:26: error: request for member ‘record_count’ in something not a structure or union
+   if( xAuthor >= gAuthors.record_count ) xAuthor = 0;
+                          ^
+data.c: At top level:
+data.c:87:1: error: unknown type name ‘PUBLISHER’
+ PUBLISHER* getPublisherByName( char* buffer, unsigned int lenBuffer, unsigned int* iOccurrence ){
+ ^~~~~~~~~
+data.c: In function ‘getPublisherByName’:
+data.c:88:17: error: request for member ‘record_count’ in something not a structure or union
+  if( gPublishers.record_count == 0 ) return NULL;
+                 ^
+data.c:90:33: error: request for member ‘record_count’ in something not a structure or union
+  if( *iOccurrence >= gPublishers.record_count ) iStartingIndex == gPublishers.record_count % *iOccurrence;
+                                 ^
+data.c:90:78: error: request for member ‘record_count’ in something not a structure or union
+  if( *iOccurrence >= gPublishers.record_count ) iStartingIndex == gPublishers.record_count % *iOccurrence;
+                                                                              ^
+data.c:93:3: error: unknown type name ‘PUBLISHER’
+   PUBLISHER* gPublisher = gPublishers.records[ xPublisher ];
+   ^~~~~~~~~
+data.c:93:38: error: request for member ‘records’ in something not a structure or union
+   PUBLISHER* gPublisher = gPublishers.records[ xPublisher ];
+                                      ^
+data.c:95:40: error: request for member ‘name’ in something not a structure or union
+    if( stringMatchCharArray( gPublisher->name, buffer, 0, lenBuffer ) ) return gPublisher;
+                                        ^~
+data.c:98:31: error: request for member ‘name’ in something not a structure or union
+   if( xPublisher >= gPublisher->name->length ) xPublisher = 0;
+                               ^~
+data.c: At top level:
+data.c:103:1: error: unknown type name ‘AUTHORSHIP’
+ AUTHORSHIP* createAuthorship( AUTHOR* pAuthor, SVALUE* svCustomAuthor, SVALUE* svRole, STRBUF* sbError ){
+ ^~~~~~~~~~
+data.c:103:31: error: unknown type name ‘AUTHOR’
+ AUTHORSHIP* createAuthorship( AUTHOR* pAuthor, SVALUE* svCustomAuthor, SVALUE* svRole, STRBUF* sbError ){
+                               ^~~~~~
+data.c:119:1: error: unknown type name ‘PUBLICATION’
+ PUBLICATION* createPublication( PUBLISHER* pPublisher, SVALUE* svCustomPublisher, SVALUE* svImprint, PLACE* place, STRBUF* sbError ){
+ ^~~~~~~~~~~
+data.c:119:33: error: unknown type name ‘PUBLISHER’
+ PUBLICATION* createPublication( PUBLISHER* pPublisher, SVALUE* svCustomPublisher, SVALUE* svImprint, PLACE* place, STRBUF* sbError ){
+                                 ^~~~~~~~~
+data.c:119:102: error: unknown type name ‘PLACE’
+ PUBLICATION* createPublication( PUBLISHER* pPublisher, SVALUE* svCustomPublisher, SVALUE* svImprint, PLACE* place, STRBUF* sbError ){
+                                                                                                      ^~~~~
+data.c:136:1: error: unknown type name ‘PLACE’
+ PLACE* getPlace( SVALUE* s, STRBUF* sbError ){
+ ^~~~~
+data.c: In function ‘getPlace’:
+data.c:137:2: error: unknown type name ‘PLACE’
+  PLACE* place = matchPlace( s )[0];
+  ^~~~~
+data.c:137:17: warning: implicit declaration of function ‘matchPlace’; did you mean ‘getPlace’? [-Wimplicit-function-declaration]
+  PLACE* place = matchPlace( s )[0];
+                 ^~~~~~~~~~
+                 getPlace
+data.c:137:32: error: subscripted value is neither array nor pointer nor vector
+  PLACE* place = matchPlace( s )[0];
+                                ^
+data.c:139:9: warning: implicit declaration of function ‘createPlace’; did you mean ‘getPlace’? [-Wimplicit-function-declaration]
+  return createPlace( s, NULL, NULL, NULL, sbError ); /* TODO */
+         ^~~~~~~~~~~
+         getPlace
+data.c:139:9: warning: returning ‘int’ from a function with return type ‘int *’ makes pointer from integer without a cast [-Wint-conversion]
+  return createPlace( s, NULL, NULL, NULL, sbError ); /* TODO */
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+data.c: At top level:
+data.c:142:1: error: unknown type name ‘PLACE’
+ PLACE* createPlace( SVALUE* city, SVALUE* state, SVALUE* country, SVALUE* code, STRBUF* sbError ){
+ ^~~~~
+data.c:142:8: error: conflicting types for ‘createPlace’
+ PLACE* createPlace( SVALUE* city, SVALUE* state, SVALUE* country, SVALUE* code, STRBUF* sbError ){
+        ^~~~~~~~~~~
+data.c:139:9: note: previous implicit declaration of ‘createPlace’ was here
+  return createPlace( s, NULL, NULL, NULL, sbError ); /* TODO */
+         ^~~~~~~~~~~
+data.c: In function ‘createPlace’:
+data.c:143:2: error: unknown type name ‘PLACE’
+  PLACE* pPlace = malloc( sizeof( PLACE ) );
+  ^~~~~
+data.c:143:34: error: ‘PLACE’ undeclared (first use in this function)
+  PLACE* pPlace = malloc( sizeof( PLACE ) );
+                                  ^~~~~
+data.c:143:34: note: each undeclared identifier is reported only once for each function it appears in
+data.c:148:8: error: request for member ‘city’ in something not a structure or union
+  pPlace->city = city;
+        ^~
+data.c:149:8: error: request for member ‘state’ in something not a structure or union
+  pPlace->state = state;
+        ^~
+data.c:150:8: error: request for member ‘country’ in something not a structure or union
+  pPlace->country = country;
+        ^~
+data.c:151:8: error: request for member ‘code’ in something not a structure or union
+  pPlace->code = code;
+        ^~
+data.c: At top level:
+data.c:154:1: error: unknown type name ‘PLACE’
+ PLACE** matchPlace( SVALUE* pattern ){
+ ^~~~~
+data.c:154:9: error: conflicting types for ‘matchPlace’
+ PLACE** matchPlace( SVALUE* pattern ){
+         ^~~~~~~~~~
+data.c:137:17: note: previous implicit declaration of ‘matchPlace’ was here
+  PLACE* place = matchPlace( s )[0];
+                 ^~~~~~~~~~
+data.c: In function ‘matchPlace’:
+data.c:157:14: error: request for member ‘records’ in something not a structure or union
+   if( gPlaces.records[ xPlace ] == NULL ) return NULL; /* place not found */
+              ^
+data.c:158:3: error: unknown type name ‘PLACE’
+   PLACE* place = gPlaces.records[ xPlace ];
+   ^~~~~
+data.c:158:25: error: request for member ‘records’ in something not a structure or union
+   PLACE* place = gPlaces.records[ xPlace ];
+                         ^
+make: *** [makefile:2: pjl] Error 1

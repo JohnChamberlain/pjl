@@ -494,12 +494,12 @@ GET_MEMO:
 	font->eFamily    = CG_Omega;
 	
 	// only the first text element needs to define the font, the others will use it
-	if( ! addTextElement( pcl, 4050, 685, sDate->string, font ) ){
+	if( ! addTextElement( pcl, 4050, 670, sDate->string, font ) ){
 		printf( "failed to add date text element" );
 		return;
 	}
 
-	if( ! addTextElement( pcl, 1260, 885, sPayee->string, NULL ) ){
+	if( ! addTextElement( pcl, 1260, 870, sPayee->string, NULL ) ){
 		printf( "failed to add payee text element" );
 		return;
 	}
@@ -514,7 +514,7 @@ GET_MEMO:
 		return;
 	}
 
-	if( ! addTextElement( pcl, 1000, 1425, sMemo->string, NULL ) ){
+	if( ! addTextElement( pcl, 1000, 1400, sMemo->string, NULL ) ){
 		printf( "failed to add memo text element" );
 		return;
 	}

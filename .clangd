@@ -1,4 +1,5 @@
 CompileFlags:
-  Add: [-I/home/jsc/dev/shared/src]
-  Add: [-I./include]
+  Add:
+    - -I/home/jsc/dev/shared/src
+    - -I/home/jsc/dev/pjl/include
 
